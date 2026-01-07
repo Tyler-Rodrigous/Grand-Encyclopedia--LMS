@@ -121,7 +121,7 @@ git clone [https://github.com/YourUsername/Grand-Encyclopedia-LMS.git](https://g
 Make sure the `Books` folder exists and contains `Lists.txt`.
 ```text
 /Grand-Encyclopedia-LMS
-├── main_2.cpp
+├── main.cpp
 ├── Header.h
 └── Books/
     └── Lists.txt
