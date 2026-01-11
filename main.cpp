@@ -107,7 +107,12 @@ public:
 					break;
 				case '0':
 					return;
-				default: break;
+				default:
+				    ClearScreen();
+                    Error1();
+                    slowtext("\n\033[32mInvalid input...............\n\033[0m\033[41mYou will be reverted back to the library.....\033[0m");
+                    delay(2);
+                    ClearScreen();
 				}
 			}
 			catch (FileException e) {
@@ -354,7 +359,7 @@ public:
 				switch (option) {
 				case '1':
 					view_book_lists();
-					cout << "Enter any key to exit";
+					cout << "Enter any key to exit: ";
 					cin >> key;
 					ClearScreen();
 					break;
@@ -377,7 +382,7 @@ public:
 					break;
 				default:
 					ClearScreen();
-					cout << "invalid input";
+					slowtext ("invalid input",30);
 					Error1();
 					delay(2);
 					ClearScreen();
@@ -465,7 +470,7 @@ public:
 			bool run = false;
 
 
-			cout << " =================================================================================" << endl;
+			cout << " ===============================================================================================================" << endl;
 			while (getline(open, y))
 
 			{
@@ -482,7 +487,7 @@ public:
 
 			}
 
-			cout << " ===================================================================================" << endl;
+			cout << " ==============================================================================================================" << endl;
 			open.close();
 		}
 
@@ -787,7 +792,7 @@ public:
 			}
 
 		}
-		cout << "\nPress Any Key to return to Menu...";
+		slowtext("\nPress Any Key to return to Menu: ",30);
 		string t;
 		cin >> t;
 
@@ -796,7 +801,7 @@ public:
 	void view_Balance() {
 		ClearScreen();
 		if (type != "User") {
-			cout << "Only Regular Users have Balance" << endl;
+			slowtext("Only Regular Users have Balance\n",30);
 		}
 		else {
 
@@ -816,7 +821,7 @@ public:
 			readFile.close();
 
 		}
-		cout << "\nPress Any Key to return to Menu...";
+		slowtext("\n\033[32mEnter Any Key to return to Menu: \033[0m");
 		string t;
 		cin >> t;
 	}
@@ -895,6 +900,11 @@ public:
 			return "Exit";
 			break;
 		default:
+		    ClearScreen();
+			Error1();
+			slowtext("\n\033[32mInvalid input...............\n\033[0m\033[41mYou will be reverted back to login system.....\033[0m");
+			delay(2);
+			ClearScreen();
 			return "";
 		}
 
