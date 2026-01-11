@@ -2,4 +2,4 @@
 4|The Alchemist|Franz|1200|Yes
 2|Plague|Albert Campus|700|Yes
 3|Memory Improvement|Unknown|100|Yes
-5|How to read people like a good|Unknown|300|Yes
+5|How to read people like a bood|Unknown|300|Yes
